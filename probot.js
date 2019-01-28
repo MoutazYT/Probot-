@@ -4,7 +4,7 @@ const fs = require("fs");
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const Canvas = require("canvas"); 
-const prefix = "#"
+const prefix = "$"
 const id = JSON.parse(fs.readFileSync("./id/rank.json", "utf8"));
 
 let banse = new Set();
@@ -351,7 +351,7 @@ client.on('message', message => {
   if(message.content.startsWith(`${prefix}invite`)){
     var embed = new Discord.RichEmbed()
     .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-    .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
+    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=538000673174978570&permissions=0&scope=bot" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
     .setTimestamp()
     .setFooter(`Requested By | ${message.author.username}`)
     .setColor("RANDOM")
@@ -1298,7 +1298,7 @@ client.on("message", message => {
 });
 
 client.on('message', message => {
-  var prefix = "#";
+  var prefix = "$";
     if (message.author.kick) return;
     if (!message.content.startsWith(prefix)) return;
   
@@ -1377,11 +1377,11 @@ if(!message.channel.guild) return;
   }
 });
 client.on('message', message => {
-  if (message.content === "#support") {
+  if (message.content === "$support") {
   let embed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#9B59B6")
-.addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/hcR4MU**")
+.addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/sEXfBRc**")
   
   
 message.channel.sendEmbed(embed);
@@ -1437,93 +1437,91 @@ message.author.sendMessage(`
 6- :musical_note: يحتوي على خاصيه ميوزك بجوده عاليه
 [❖═════════════════════════════❖]
 
-الاوامر العامة
+[❖═══════════════{الاوامر العامة}══════════════❖]
+$id معلومات عن حسابك الشخصي
 
-#id معلومات عن حسابك الشخصي
+$server معلومات حول السيرفر
 
-#server معلومات حول السيرفر
+$move سحب عضو الى رومك الصوتي
 
-#move سحب عضو الى رومك الصوتي
+$clear مسح الرسائل الموجوده في الروم بعدد
 
-#clear مسح الرسائل الموجوده في الروم بعدد
+$avatar يعرض اك صورتك الشخصية
 
-#avatar يعرض اك صورتك الشخصية
+$image يعرض لك صورة السيرفر
 
-#image يعرض لك صورة السيرفر
+$credit يوريك كم الكريديت حقتك
 
-#credit يوريك كم الكريديت حقتك
+$daily يسوي لك سحب فلوس
 
-#daily يسوي لك سحب فلوس
+$rep يعطي ريب
 
-#rep يعطي ريب
+$rank يطلع لك نقاطك
 
-#rank يطلع لك نقاطك
+$profile معلومات عامة مع الصورة
 
-#profile معلومات عامة مع الصورة
+[❖═══════════════{اوامر الادراة السيرفر}══════════════❖]
+$ban حضر عضو من السيرفر
 
-أوامر ادارة السيرفرات 
+$setwelcomer لتحديد روم الويلكم
 
-#ban حضر عضو من السيرفر
+$autorole لتشغيل الاوتو رول وتحديد الرتبه
 
-#setwelcomer لتحديد روم الويلكم
+$kick طرد عضو من السيرفر
 
-#autorole لتشغيل الاوتو رول وتحديد الرتبه
+$mute اعضاء ميوت كتابي لعضو في السيرفر
 
-#kick طرد عضو من السيرفر
+$unmute فك الميوت عن عضو في السيرفر
 
-#mute اعضاء ميوت كتابي لعضو في السيرفر
+$warn لتحذير شخص
 
-#unmute فك الميوت عن عضو في السيرفر
+$dac حذف جميع رومات السيرفر
 
-#warn لتحذير شخص
+$dar حذف جميع رتب السيرفر
 
-#dac حذف جميع رومات السيرفر
+$openroom فتح المحادثة في الروم
 
-#dar حذف جميع رتب السيرفر
+$closeroom قفل المحادثة في الروم
 
-#openroom فتح المحادثة في الروم
+$role اعطاء رتبه لشخض معين
 
-#closeroom قفل المحادثة في الروم
+$role humans اعطاء رتب للبشريين
 
-#role اعطاء رتبه لشخض معين
+$role bots اعطاء رتبه للبوتات
 
-#role humans اعطاء رتب للبشريين
+$role all اعطاء رتبه للجميع سواء بشر او بوتات
 
-#role bots اعطاء رتبه للبوتات
+$-role سحب الرتبه من شخص معين
 
-#role all اعطاء رتبه للجميع سواء بشر او بوتات
+$-role humans سحب رتبه من الميمبرز
 
-#-role سحب الرتبه من شخص معين
+$-role bots سحب رتبه للبوتات
 
-#-role humans سحب رتبه من الميمبرز
+$-role all سحب رتبه معينه من جميع الاعضاء سواء يوزرات او بوتات
 
-#-role bots سحب رتبه للبوتات
+$temp on تشغيل الرومات المؤقته
 
-#-role all سحب رتبه معينه من جميع الاعضاء سواء يوزرات او بوتات
+$temp off اطفاء الرومات المؤقته
 
-#temp on تشغيل الرومات المؤقته
+[❖══════════════{اوامر الميوزك}═══════════════❖]
 
-#temp off اطفاء الرومات المؤقته
+$play لتشغيل ميوزك
 
-اوامر الميوزك
+$stop لايقاف الميوزك
 
-#play لتشغيل ميوزك
+$skip لتخطي الميوزك
 
-#stop لايقاف الميوزك
+$queue لعرض قائمه الانتظار
 
-#skip لتخطي الميوزك
+$vol لرفع صوت
 
-#queue لعرض قائمه الانتظار
+[❖══════════════{ اخرى }═══════════════❖] 
 
-#vol لرفع صوت
+$support رابط سيرفر الدعم الفني
 
-اخرى 
+$invite رابط اضافة البوت
 
-#support رابط سيرفر الدعم الفني
-
-#invite رابط اضافة البوت
-
-#ping لمعرفه سرعه اتصال البوت
+$ping لمعرفه سرعه اتصال البوت
 
 **`);
 
@@ -1935,7 +1933,7 @@ message.channel.stopTyping()
 }
 });
 client.on('message', message =>{
-  if(message.content === '#ping'){
+  if(message.content === '$ping'){
 let start = Date.now(); message.channel.send('pong').then(message => { 
 message.edit(`\`\`\`js
 Time taken: ${Date.now() - start} ms
@@ -1949,7 +1947,7 @@ if(message.content.startsWith('#bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-let copy = "ProBot";
+let copy = "Grax-all";
 let request = `Requested By ${message.author.username}`;
 if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
 msg.react('✅')
