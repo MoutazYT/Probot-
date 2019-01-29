@@ -244,6 +244,66 @@ if (err) console.error(err);
 if (err) console.error(err);
 });
     
+	      
+client.on('message', message => {    ///Toxic Codes
+            if (message.content.startsWith("^^rules")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     اولا ' ,' ممنوع السب ')
+.addField('     ثانيا ' ,' لا تسوي سبام  ')
+.addField('     ثالثا ' ,' لا تزعج الاخرين ')
+.addField('    رابعا' ,' ممنوع الاعلانات ')
+.addField('    خامسا' ,' احترم الاخرين ')
+.addField('    سادسا' ,' لا تنشر في الشات او بل خاص ')    ///Toxic Codes
+.addField('    سابعا' ,' لا تنشر روابط! ')
+.addField('    ثامنا' ,' لا تسوي سبام ايموجي ')
+.addField('    تاسعا' ,' لا تطلب رتبه الاداره ! ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);   ///Toxic Codes
+    }  
+});    ///Toxic Codes
+
+	      
+	      
+	      
+	      
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك Grax BOT THE BEST**`)
+      guild.owner.send(embed)
+});
+
+
+client.on("guildMemberAdd", (member) => {
+client.channels.get('538263179491409925').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+})
+client.on("guildMemberRemove", (member) => {
+client.channels.get('538263179491409925').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+})
+
+	      
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
+	      
     client.on("message", message => {
   if (message.author.bot) return;
     if(!message.channel.guild) return;
