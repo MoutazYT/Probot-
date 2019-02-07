@@ -29,10 +29,6 @@ if(boner.bans > 2) {
 guild.members.get(ser.id).removeRoles(roles)
 }
 
-    })
-    fs.writeFile('./alpha.json', JSON.stringify(bane), (err) => {
-if (err) console.error(err);
-})
 
 })
 client.on('guildMemberRemove', (u) => {
