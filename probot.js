@@ -418,29 +418,25 @@ client.on('message', message => {
 
 
 
-
-client.on('message', message => {//Mrx - Dev
-    if (message.content.startsWith(prefix + '$sug')) {//Mrx - Dev
-        if (message.author.bot) return//Mrx - Dev
-        if (!message.guild) return message.reply('**:x: This Commands Just In Server**').then(v => {v.react('❌')})//Mrx - Dev
-        var args =  message.content.split(' ').slice(1).join(' ')//Mrx - Dev
-        if (!args) return message.reply('Type You Suggestion').then(c => {c.delete(5000)})//Mrx - Dev
-        let Room = message.guild.channels.find(`name`, "suggestions")//Mrx - Dev
-        if (!Room) return message.channel.send("Can't find suggestions channel.").then(d => d.react('❌'))//Mrx - Dev
-        let embed = new Discord.RichEmbed()//Mrx - Dev
-        .setColor('RANDOM')//Mrx - Dev
-        .setAuthor(`Vote on ${message.author.username}'s suggestion`, message.author.avatarURL)//Mrx - Dev
-       .addField('**Suggestion**',`${args}`)//Mrx - Dev
-       .setThumbnail(message.author.avatarURL)//Mrx - Dev
-       .setFooter(`ID: ${message.author.id}`)//Mrx - Dev
-       Room.sendEmbed(embed).then(c => {//Mrx - Dev
-           c.react('✅').then(() => //Mrx - Dev
-               c.react('❌'))//Mrx - Dev
-           
-       }).catch(e => console.error(e)//Mrx - Dev
-       )
-   }//Mrx - Dev
-});//Mrx - Dev
+client.on('message',async message => {
+    if(message.content.startsWith("$restart")) {
+        if(message.author.id !== "446243110025166858") return message.reply('You arent the bot owner.');
+        message.channel.send('zZz').then(msg => {
+            setTimeout(() => {
+               msg.edit('zZzZz');
+            },1000);
+            setTimeout(() => {
+               msg.edit('zZzZzZz');
+            },2000);
+        });
+        console.log('Your Bot Has Restarted.');
+        console.log(zZzZz);
+        setTimeout(() => {
+            client.destroy();
+            client.login(process.env.BOT_TOKEN);
+        },3000);
+    }
+});
 
 
 const seender = 'لعمل منشن لمرسل الرساله قم بكتابة [المرسل] في الرسالة.';
