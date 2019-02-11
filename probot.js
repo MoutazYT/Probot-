@@ -418,27 +418,6 @@ client.on('message', message => {
 
 
 
-client.on('message',async message => {
-    if(message.content.startsWith("$restart")) {
-        if(message.author.id !== "446243110025166858") return message.reply('You arent the bot owner.');
-        message.channel.send('zZz').then(msg => {
-            setTimeout(() => {
-               msg.edit('zZzZz');
-            },1000);
-            setTimeout(() => {
-               msg.edit('zZzZzZz');
-            },2000);
-        });
-        console.log('Your Bot Has Restarted.');
-        console.log(zZzZz);
-        setTimeout(() => {
-            client.destroy();
-            client.login(process.env.BOT_TOKEN);
-        },3000);
-    }
-});
-
-
 
 
 
