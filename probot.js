@@ -1478,7 +1478,7 @@ omar.reply("`تم حذف جميع الرتب بنجاح`")
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-    if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+    if(!message.member.hasPermission('')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 
 
 
@@ -1495,7 +1495,7 @@ message.author.sendMessage(`
 [❖═════ لتشغيل اللوق Log يجب وجود روم باسم ═══════❖]
 
 [❖═════════════════════════════❖]
-        لماذا بروبوت ؟
+        ?لماذا بروبوت ؟
 1- :rocket: سرعه اتصال ممتازه
 2- :beginner: سهل الاستخدام
 3- :warning: صيانه يوميه
